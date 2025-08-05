@@ -57,8 +57,8 @@ The script will prompt you for the lovable project folder name, then:
 📌 **Prompt Template Recommendations:**
 
 Already written here
-[Chinese Version PROMPT_zh.md](PROMPT_zh.md)
-[English Version PROMPT.md](PROMPT.md)
+[Chinese Version PROMPT_zh.md](./next-lovable-template/PROMPT_zh.md)
+[English Version PROMPT.md](./next-lovable-template/PROMPT.md)
 
 ---
 
