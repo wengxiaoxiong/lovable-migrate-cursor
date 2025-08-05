@@ -1,101 +1,128 @@
 
-## 🪄 Lovable 项目迁移助手（+ Coding Agent 自动改造）
+## 🪄 Lovable Project Migration Assistant (+ Coding Agent Auto-Refactor)
 
-> **lovable 自动生成的前端项目**，想升级为支持数据库和 API 的全栈项目？
-> 只需两步：**运行脚本 + 启动 Coding Agent**，即可完成从静态到智能的跃迁！
+[中文版本的文档](./README_zh.md)
 
----
-
-### 🔧 一句话简介
-
-**这个工具链 = 脚本 + 模版项目 + AI Agent**
-
-帮助你把 `lovable` 生成的 Vite 项目：
-
-* ✅ **一键迁移**到 Next.js 全栈模版项目结构
-* 🤖 **交给 Coding Agent**，自动补充 API、数据库 schema 和数据接入逻辑
-* 🚀 快速上线或继续开发，实现**从“玩具项目”到“真实应用”的升级**
+> **Lovable auto-generated frontend projects**, want to upgrade to full-stack with database and API support?
+> Just two steps: **run the script + start Coding Agent**, complete the leap from static to intelligent!
 
 ---
 
-### ✅ 步骤 1：运行脚本，完成文件迁移
+### 🔧 One-Line Summary
+
+**This toolchain = script + template project + AI Agent**
+
+Helps you migrate your `lovable` generated Vite project:
+
+* ✅ **One-click migration** to Next.js full-stack template structure
+* 🤖 **Hand over to Coding Agent**, automatically supplement API, database schema, and data integration logic
+* 🚀 Quick deployment or continued development, achieving the upgrade from "toy project" to "real application"
+
+---
+
+### ✅ Step 1: Run Script, Complete File Migration
 
 ```bash
 python migrate_lovable.py
 ```
 
-脚本会提示你输入 lovable 项目的文件夹名，然后：
+The script will prompt you for the lovable project folder name, then:
 
-| 来源路径                          | 迁移行为 | 目标路径                                      |
-| ----------------------------- | ---- | ----------------------------------------- |
-| `./[lovable]/public/`         | 复制   | `./next-lovable-template/public/`         |
-| `./[lovable]/src/components/` | 移动   | `./next-lovable-template/components/`     |
-| `./[lovable]/src/其余内容`        | 复制   | `./next-lovable-template/components/app/` |
+| Source Path                          | Migration Action | Target Path                                      |
+| ------------------------------------ | ---------------- | ------------------------------------------------ |
+| `./[lovable]/public/`                | Copy             | `./next-lovable-template/public/`                |
+| `./[lovable]/src/components/`        | Move             | `./next-lovable-template/components/`            |
+| `./[lovable]/src/remaining content`  | Copy             | `./next-lovable-template/components/app/`        |
 
-📁 最终目录结构基于：[`next-lovable-template`](https://github.com/wengxiaoxiong/next-fullstack-template)
+📁 Final directory structure based on: [`next-lovable-template`](https://github.com/wengxiaoxiong/next-fullstack-template)
 
 ---
 
-### 🔄 步骤 2：启动 Coding Agent，自动智能改造
+### 🔄 Step 2: Start Coding Agent, Auto-Intelligent Refactor
 
-> 运行脚本后，你会得到一个**看似一样的项目结构**，但**后续需要 Coding Agent 接手完成真正的“智能迁移”工作**。
+> After running the script, you'll get a **visually identical project structure**, but **subsequent work requires Coding Agent to complete the real "intelligent migration"**.
 
-🎯 Coding Agent 会自动完成以下任务：
+🎯 Coding Agent will automatically complete these tasks:
 
-| 功能            | 描述                                            |
-| ------------- | --------------------------------------------- |
-| 🔍 页面分析       | 将 `vite` 项目页面结构迁移为 Next.js App Router 格式      |
-| 🧠 Mock 推理    | 从原始 mock 数据中推理出数据库模型（如 User / Product / Task） |
-| 🏗️ Prisma 建模 | 自动生成 `schema.prisma`，并生成数据库迁移                 |
-| ⚙️ API 创建     | 基于业务逻辑自动创建 `app/api/*` 路由及逻辑                  |
-| 🧪 本地测试       | 可扩展为自动生成测试数据、调用 API 进行调试                      |
+| Feature            | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| 🔍 Page Analysis   | Migrate Vite project page structure to Next.js App Router format |
+| 🧠 Mock Inference | Infer database models from original mock data (e.g., User/Product/Task) |
+| 🏗️ Prisma Modeling | Auto-generate `schema.prisma` and create database migrations |
+| ⚙️ API Creation    | Auto-create `app/api/*` routes and logic based on business logic |
+| 🧪 Local Testing   | Extensible to auto-generate test data and debug API calls |
 
-> 你只需在 VSCode 中启动 Agent 或接入 LLM 工具，就可以配合 Coding Agent 持续完成重构！
+> You just need to start Agent in VSCode or connect LLM tools, then work with Coding Agent to continuously complete refactoring!
 
-📌 **提示词模板推荐：**
+📌 **Prompt Template Recommendations:**
 
-```txt
-请将我当前目录中已经迁移好的项目，从纯前端改造成支持数据库与 API 的全栈项目，使用模版预设的功能，并基于 mock 数据推理出 Prisma 模型与 REST 接口结构。
+Already written here
+[Chinese Version PROMPT_zh.md](PROMPT_zh.md)
+[English Version PROMPT.md](PROMPT.md)
+
+---
+
+### 🛠️ Step 3: Development Environment Setup
+
+After script execution, navigate to the project directory and set up the development environment:
+
+```bash
+cd next-lovable-template
+
+# Install dependencies
+sudo pnpm install
+
+# Start development server
+pnpm dev
+
 ```
 
----
-
-### 🧰 模版项目功能亮点（next-lovable-template）
-
-* ✅ **Next.js 15 + App Router**（现代 React 全栈架构）
-* ✅ **Prisma ORM**（数据库建模 + API 数据层）
-* ✅ **Vercel Blob**（文件上传能力）
-* ✅ **AI SDK**（可接入 AI 功能）
-* ✅ **Tailwind CSS + shadcn/ui**（极致开发体验）
-* ✅ **ESLint** & `pnpm dev` 即刻启动
-
-📦 模版仓库：[https://github.com/wengxiaoxiong/next-fullstack-template](https://github.com/wengxiaoxiong/next-fullstack-template)
-📺 教学视频：[中文部署教程（B站）](https://www.bilibili.com/video/BV1xW8mzTETn/)
+**Important Notes:**
+- Use `sudo pnpm install` to ensure proper permissions
+- The dev server will start at `http://localhost:3000`
+- Database commands are only needed if your project uses Prisma ORM
+- For production deployment, use `pnpm build` and `pnpm start`
 
 ---
 
-### 🚀 为什么值得用这套工具链？
+### 🧰 Template Project Highlights (next-lovable-template)
 
-| 传统做法            | 使用 Lovable + Agent |
-| --------------- | ------------------ |
-| 手动创建页面结构        | 自动迁移到 App Router   |
-| 手写 Prisma + API | 让 Agent 智能推理并生成    |
-| 重写样式 + 架构对齐     | 保留原样式，智能结构适配       |
-| 反复调试、上线困难       | 模版即部署架构，秒上线        |
+* ✅ **Next.js 15 + App Router** (modern React full-stack architecture)
+* ✅ **Prisma ORM** (database modeling + API data layer)
+* ✅ **Vercel Blob** (file upload capabilities)
+* ✅ **AI SDK** (AI functionality integration)
+* ✅ **Tailwind CSS + shadcn/ui** (ultimate development experience)
+* ✅ **ESLint** & `pnpm dev` ready to start
 
----
-
-### 🧪 项目适用人群
-
-* 想把 lovable 生成的原型项目，升级为真实产品
-* 不懂后端，但想拥有 API、数据库能力
-* 希望结合 Coding Agent 智能开发，提升效率
-* 创业者、设计师、PM、自研项目开发者
+📦 Template Repository: [https://github.com/wengxiaoxiong/next-fullstack-template](https://github.com/wengxiaoxiong/next-fullstack-template)
+📺 Tutorial Video: [Chinese Deployment Tutorial (Bilibili)](https://www.bilibili.com/video/BV1xW8mzTETn/)
 
 ---
 
-### 🧠 总结
+### 🚀 Why This Toolchain is Worth Using?
 
-> **lovable** 是灵感起点，**脚本** 是迁移桥梁，**Coding Agent** 是开发拍档，**模版** 是上线基地。
-> 一套工具链，从 0 到 1，轻松开启你的全栈应用之旅！
+| Traditional Approach            | Using Lovable + Agent |
+| ----------------------------- | --------------------- |
+| Manual page structure creation | Auto-migrate to App Router |
+| Hand-write Prisma + API | Let Agent intelligently infer and generate |
+| Rewrite styles + architecture alignment | Preserve original styles, intelligent structure adaptation |
+| Repeated debugging, difficult deployment | Template deployment architecture, instant deployment |
+
+---
+
+### 🧪 Project Target Audience
+
+* Want to upgrade lovable-generated prototype projects to real products
+* Don't understand backend but want API and database capabilities
+* Hope to combine Coding Agent for intelligent development, improving efficiency
+* Entrepreneurs, designers, PMs, indie developers
+
+---
+
+### 🧠 Summary
+
+> **lovable** is the inspiration starting point, **script** is the migration bridge, **Coding Agent** is the development partner, **template** is the deployment foundation.
+> One toolchain, from 0 to 1, easily start your full-stack application journey!
+
+[中文文档](README_zh.md)
 
