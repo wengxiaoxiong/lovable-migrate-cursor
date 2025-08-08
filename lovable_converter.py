@@ -1,9 +1,9 @@
-# 将[lovable_dir_name]的文件夹中的核心文件 放入到next-lovable-template中
+# 将[lovable_dir_name]的文件夹中的核心文件 放入到next-fullstack-template中
 
 # 1. 要求用户输入[lovable_dir_name]
-# 2. 将./[lovable_dir_name]/public/*复制到./next-lovable-template/public/
-# 3. 将./[lovable_dir_name]/src/components/*移动到./next-lovable-template/components/*
-# 4. 将./[lovable_dir_name]/src/剩下的所有的东西复制到./next-lovable-template/components/app中
+# 2. 将./[lovable_dir_name]/public/*复制到./next-fullstack-template/public/
+# 3. 将./[lovable_dir_name]/src/components/*移动到./next-fullstack-template/components/*
+# 4. 将./[lovable_dir_name]/src/剩下的所有的东西复制到./next-fullstack-template/components/app中
 
 # 分清楚移动和复制
 
@@ -11,7 +11,7 @@
 # -*- coding: utf-8 -*-
 """
 Lovable项目文件迁移脚本
-将lovable项目的核心文件整理到next-lovable-template中
+将lovable项目的核心文件整理到next-fullstack-template中
 """
 
 import os
@@ -124,7 +124,7 @@ def main():
         sys.exit(1)
     
     # 检查目标模板目录是否存在
-    template_dir = "next-lovable-template"
+    template_dir = "next-fullstack-template"
     if not os.path.exists(template_dir):
         print(f"❌ 错误: 目标模板目录 '{template_dir}' 不存在")
         sys.exit(1)
