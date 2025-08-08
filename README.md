@@ -30,9 +30,9 @@ The script will prompt you for the lovable project folder name, then:
 
 | Source Path                          | Migration Action | Target Path                                      |
 | ------------------------------------ | ---------------- | ------------------------------------------------ |
-| `./[lovable]/public/`                | Copy             | `./next-lovable-template/public/`                |
-| `./[lovable]/src/components/`        | Move             | `./next-lovable-template/components/`            |
-| `./[lovable]/src/remaining content`  | Copy             | `./next-lovable-template/components/app/`        |
+| `./[lovable]/public/`                | Copy             | `./next-fullstack-template/public/`                |
+| `./[lovable]/src/components/`        | Move             | `./next-fullstack-template/components/`            |
+| `./[lovable]/src/remaining content`  | Copy             | `./next-fullstack-template/components/app/`        |
 
 📁 Final directory structure based on: [`next-lovable-template`](https://github.com/wengxiaoxiong/next-fullstack-template)
 
