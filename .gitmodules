@@ -1,0 +1,3 @@
+[submodule "next-fullstack-template"]
+	path = next-fullstack-template
+	url = https://github.com/wengxiaoxiong/next-fullstack-template
